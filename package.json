@@ -1,0 +1,25 @@
+{
+  "name": "drugs",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "watch": "postcss src/css/tailwind.css -o public/build/tailwind.css --watch"
+  },
+  "dependencies": {
+    "autoprefixer": "^9.7.2",
+    "postcss-cli": "^6.1.3",
+    "tailwindcss": "^1.1.3",
+    "vue": "^2.6.10",
+    "vue-router": "^3.1.3"
+  },
+  "devDependencies": {
+    "@vue/cli-service": "^4.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ]
+}
