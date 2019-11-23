@@ -7,8 +7,31 @@
         <span v-if="checkbox" class="sf-light text-gray-800">Solo monoproveedores</span>
         <span v-else class="sf-light text-gray-600">Solo monoproveedores</span>
       </div>
-      <div class="mt-6 w-full">
-
+      <div class="w-full h-scroll mt-6 overflow-scroll overflow-hidden" id="scroll">
+        <div v-for="(medicine, index) in medicines" :key="index">
+          <button
+          v-if="index == selectedMedicine"
+          class="w-full p-4 mb-5 text-left rounded-lg shadow-md bg-gray-100 focus:outline-none">
+            <div class="tracking-wider">
+              <div class="w-full flex justify-between items-center sf-bold text-gray-700">
+                <span class="text-lg uppercase">{{medicine.name}}</span>
+                <span class="text-xl">{{medicine.registers}}</span>
+              </div>
+              <span class="sf-medium uppercase text-gray-600">{{medicine.atc}}</span>
+            </div>
+          </button>
+          <button
+          v-else
+          class="w-full p-4 mb-5 text-left rounded-lg border border-gray-300 bg-gray-100 focus:outline-none">
+            <div class="tracking-wider">
+              <div class="w-full flex justify-between items-center sf-bold text-gray-700">
+                <span class="text-lg uppercase">{{medicine.name}}</span>
+                <span class="text-xl">{{medicine.registers}}</span>
+              </div>
+              <span class="sf-medium uppercase text-gray-600">{{medicine.atc}}</span>
+            </div>
+          </button>
+        </div>
       </div>
     </div>
   </div>
@@ -31,6 +54,8 @@ export default {
         {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]},
         {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]},
         {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]},
         {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},]}
       ]
     }
@@ -39,5 +64,7 @@ export default {
 </script>
 
 <style>
-
+#scroll::-webkit-scrollbar {
+    display: none;
+}
 </style>

@@ -10,6 +10,9 @@ module.exports = {
         '60': '15rem',
         '80': '20rem',
       },
+      height: {
+        'scroll': 'calc(100vh - 180px)'
+      },
       fontSize: {
         
       }
