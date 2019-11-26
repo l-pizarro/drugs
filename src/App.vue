@@ -1,5 +1,5 @@
 <template>
-  <div id="app" class="h-screen w-screen flex antialiased">
+  <div id="app" class="h-screen w-screen xl:flex antialiased hidden">
     <sidebarcomponent/>
     <router-view/>
   </div>
