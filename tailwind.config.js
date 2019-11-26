@@ -1,5 +1,14 @@
 module.exports = {
   theme: {
+    screens: {
+      'sm': {'min': '640px'},
+      'md': {'min': '768px'},
+      'lg': {'min': '1024px'},
+      'xl': {'min': '1280px'},
+      'xxl': {'min': '1440px'},
+      'xxxl': {'min': '1680px'},
+      'XXl': {'min': '1920px'},
+    },
     extend: {
       colors: {
         scroll: {
@@ -14,15 +23,27 @@ module.exports = {
         '80': '20rem',
         'elements': 'calc(100vw - 608px)',
         // the following widths are only for the element's table on de the medicine's section
-        'm33': '33%',
-        'm21': '21%',
-        'm37': '37%',
-        'm9': '9%'
+
+        // 1440px
+        'm1': '260px',
+        'm2': '205px',
+        'm3': '311px',
+        'm4': '56px',
+
+        // 1680px
+        'm5': '240px',
+
       },
       height: {
         '30': '7.5rem',
         'isp': '49px',
-        'scroll': 'calc(100vh - 180px)',
+        'scroll': 'calc(100vh - 164px)',
+        'scroll2': 'calc(100vh - 187px)',
+        'scroll3': 'calc(100vh - 228px)',
+        // the following widths are only for the element's table on de the medicine's section
+        'elements': 'calc(100vh - 260px)',
+        'elements2': 'calc(100vh - 274px)',
+        'elements3': 'calc(100vh - 296px)'
       },
       fontSize: {
         'big': '1.626rem'

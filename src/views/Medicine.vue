@@ -11,11 +11,11 @@
           <span v-if="checkbox" class="sf-light text-gray-800">Solo monoproveedores</span>
           <span v-else class="sf-light text-gray-600">Solo monoproveedores</span>
         </div>
-        <div class="w-full h-scroll mt-6 overflow-scroll overflow-hidden" id="scroll">
+        <div class="w-full h-scroll mt-6 overflow-scroll overflow-hidden xxxl:h-scroll2 XXl:h-scroll3" id="scroll">
           <div v-for="(medicine, index) in medicines" :key="index">
             <button
             v-if="index == selectedMedicine"
-            class="w-full p-4 mb-5 text-left rounded-lg shadow bg-gray-100 focus:outline-none">
+            class="w-full p-4 mb-5 text-left rounded-lg border border-gray-400 bg-gray-300 shadow-inner focus:outline-none">
               <div class="tracking-wider">
                 <div class="w-full flex justify-between items-center sf-bold text-gray-700">
                   <span class="text-lg uppercase">{{medicine.name}}</span>
@@ -46,41 +46,50 @@
         <span class="sf-medium text-gray-200 uppercase tracking-wider">{{medicines[selectedMedicine].atc}}</span>
       </div>
       <div class="w-full h-16 flex items-center bg-gray-300">
-        <p class="sf-light text-lg text-gray-900 ml-12">Este medicamento tiene <span class="sf-bold text-lg text-indigo-700">{{medicines[selectedMedicine].registers}}</span> registros</p>
+        <p class="sf-light text-lg text-gray-900 ml-12">Este medicamento tiene <span class="sf-bold text-lg text-indigo-600">{{medicines[selectedMedicine].registers}}</span> registros</p>
       </div>
-      <div class="w-full py-5 flex sf-bold uppercase text-gray-600 mt-5">
-        <div class="w-m33">
-          <span class="ml-12">
-            Nombre Elemento
-          </span>
-        </div>
-        <div class="w-m21 text-right">
-          <span>
-            Registro
-          </span>
-        </div>
-        <div class="w-m37">
-          <span class="ml-8">
-            Razon Social
-          </span>
-        </div>
+      <div class="w-full py-5 flex items-center sf-bold uppercase text-gray-600 mt-3">
+        <span class="w-m1 pl-12">
+          Nombre Elemento
+        </span>
+        <span class="w-m2 text-right">
+          Registro
+        </span>
+        <span class="w-60 hidden pr-6 text-right XXl:block">
+          Vencimiento
+        </span>
+        <span class="w-m3 pl-12">
+          Razon Social
+        </span>
+        <span class="w-m5 hidden xxxl:block">
+          Forma Farmaceutica
+        </span>
       </div>
-      <buttton class="w-full h-16 flex items-center sf-light text-lg text-gray-700 hover:bg-blue-200" v-for="(element, index) in medicines[selectedMedicine].elements" :key="index">
-        <div class="w-m33 h-isp">
-          <span class="ml-12">
+      <div class="w-full h-elements overflow-y-scroll xxxl:h-elements2 XXl:h-elements3">
+        <button class="w-full h-16 flex text-left sf-light text-lg text-gray-700 focus:outline-none" v-for="(element, index) in medicines[selectedMedicine].elements" :key="index">
+          <span class="w-m1 pl-12">
             {{element.name}}
           </span>
-        </div>
-        <div class="w-m21 h-isp text-right">
-          <span class="block">{{element.register}}</span>
-          <span class="text-base text-gray-600">{{element.isp}}</span>
-        </div>
-        <div class="w-m37 h-isp">
-          <span class="ml-8">
+          <div class="w-m2 text-right">
+            <span class="block">{{element.register}}</span>
+            <span class="text-gray-600 text-base">{{element.isp}}</span>
+          </div>
+          <span class="w-m5 hidden pr-6 text-right XXl:block">
+            {{element.expiration}}
+          </span>
+          <span class="w-m3 pl-12">
             {{element.provider}}
           </span>
-        </div>
-      </buttton>
+          <div class="w-m5 hidden xxxl:block">
+            <span class="block">
+              {{element.formule[0]}}
+            </span>
+            <span class="text-gray-600 text-base">
+              {{element.formule[1]}}
+            </span>
+          </div>
+        </button>
+      </div>
     </div>
   </div>
 </template>
@@ -101,23 +110,41 @@ export default {
           atc: "J05AF06",
           registers: 17,
           elements: [
-            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
-            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Acetilsalicilico", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]},
+            {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}
           ]
         },
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
-        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]}
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]},
+        {name: "Abacavir", atc: "J05AF06", registers: 17, elements: [{name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}, {name: "Abacavir Sulfato", register: "12 de en. de 2010", isp: "F-17883/15", provider: "Laboratorios Recalcine S.A", left: 0, expiration: "04 de jun. de 2019", expired: "2 semanas", formule: ["Solución inyectable", "500mg"]}]}
       ]
     }
   },

@@ -1,6 +1,5 @@
 <template>
-    <div class="alert w-80 h-screen bg-scroll-100">
-        alert
+    <div class="">
     </div>
 </template>
 
@@ -9,7 +8,3 @@ export default {
 
 }
 </script>
-
-<style>
-
-</style>
