@@ -66,7 +66,7 @@
         </span>
       </div>
       <div class="w-full h-elements overflow-y-scroll xxxl:h-elements2 XXl:h-elements3">
-        <button class="w-full h-16 flex text-left sf-light text-lg text-gray-700 focus:outline-none" v-for="(element, index) in medicines[selectedMedicine].elements" :key="index">
+        <button class="w-full h-16 flex text-left sf-light text-lg text-gray-700 hover:bg-blue-100 focus:outline-none" v-for="(element, index) in medicines[selectedMedicine].elements" :key="index">
           <span class="w-m1 pl-12">
             {{element.name}}
           </span>

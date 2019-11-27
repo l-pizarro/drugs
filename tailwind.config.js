@@ -15,8 +15,13 @@ module.exports = {
           '100': '#F2F5F7'
         }
       },
+      margin: {
+        '7': '1.75rem',
+        '18': '4.5rem'
+      },
       padding: {
-        '7': '1.75rem'
+        '7': '1.75rem',
+        '18': '4.5rem'
       },
       width: {
         '60': '15rem',
@@ -46,7 +51,8 @@ module.exports = {
         'elements3': 'calc(100vh - 296px)'
       },
       fontSize: {
-        'big': '1.626rem'
+        'big': '1.626rem',
+        'tall': '2rem'
       }
     }
   },
