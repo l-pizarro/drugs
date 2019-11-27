@@ -2,7 +2,7 @@
   <div class="sidebarcomponent w-60 h-full bg-gray-700">
       <div class="w-full h-20 bg-gray-800"></div>
       <div class="mt-16 text-white sf-medium text-xl">
-          <div v-for="(tab, index) in tabs" :key="index" class="flex">
+          <div v-for="(tab, index) in tabs" :key="index" class="flex items-center">
               <button
               v-if="index == selected"
               class="w-full h-12 flex items-center text-left bg-gray-800 focus:outline-none"
