@@ -88,7 +88,7 @@
               {{element.formule[1]}}
             </span>
           </div>
-          <div class="options w-m4 hidden">
+          <div class="options hidden">
             <svg width="8" height="32">
               <g fill="#7f9cf5" data-name="Grupo 1" transform="translate(-1388 -277)">
                 <circle cx="4" cy="4" r="4" data-name="Elipse 1" transform="translate(1388 277)"/>
