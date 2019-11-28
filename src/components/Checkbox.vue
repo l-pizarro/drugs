@@ -2,7 +2,7 @@
     <div class="w-5 h-5">
         <button
         v-if="!check"
-        class="w-full h-full border-2 border-gray-400 rounded focus:outline-none"
+        class="w-full h-full border-2 border-gray-300 rounded focus:outline-none"
         @click="tap()">
         </button>
         <button

@@ -67,9 +67,9 @@ module.exports = {
         '30': '7.5rem',
         'isp': '54px',
         'isp2': '54px',
-        'scroll': 'calc(100vh - 164px)',
-        'scroll2': 'calc(100vh - 187px)',
-        'scroll3': 'calc(100vh - 228px)',
+        'scroll': 'calc(100vh - 120px)',
+        'scroll2': 'calc(100vh - 143px)',
+        'scroll3': 'calc(100vh - 184px)',
 
         // the following widths are only for the element's table on de the medicine's section
         'elements': 'calc(100vh - 260px)',
