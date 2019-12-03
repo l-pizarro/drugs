@@ -1,7 +1,12 @@
 <template>
-  <div id="app" class="h-screen w-screen flex antialiased">
-    <sidebarcomponent/>
-    <router-view/>
+  <div id="app">
+    <div class="w-screen h-screen antialiased hidden xl:flex">
+      <sidebarcomponent/>
+      <router-view/>
+    </div>
+    <div class="w-screen h-screen flex items-center justify-center xl:hidden">
+      <span class="px-6 sf-light sm:px-16 sm:text-lg md:px-24 md:text-2xl text-justify">Lo sentimos, este módulo no está disponible para dispositivos pequeños.</span>
+    </div>
   </div>
 </template>
 

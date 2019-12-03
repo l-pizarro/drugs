@@ -68,7 +68,7 @@
         <span class="w-60 hidden pr-6 text-right XXl:block">
           Vencimiento
         </span>
-        <span class="w-m3 pl-12">
+        <span class="w-m3 pl-12 hidden xxl:block">
           Razon Social
         </span>
         <span class="w-m5 hidden xxxl:block">
@@ -87,7 +87,7 @@
           <span class="w-m5 h-isp hidden pr-6 text-right XXl:block">
             {{element.expiration}}
           </span>
-          <span class="w-m3 h-isp pl-12 pr-4 truncate">
+          <span class="w-m3 h-isp pl-12 pr-4 truncate hidden xxl:block">
             {{element.provider}}
           </span> 
           <div class="w-m5 h-isp hidden xxxl:block">
@@ -98,8 +98,8 @@
               {{element.formule[1]}}
             </span>
           </div>
-          <button class="options hidden xxl:ml-2 XXl:ml-4 focus:outline-none" @click="showElementInfo(element)">
-            <svg width="8" height="32">
+          <button class="options hidden xl:ml-16 xxl:ml-2 XXl:ml-4 focus:outline-none" @click="showElementInfo(element)">
+            <svg width="8" height="32"> 
               <g fill="#7f9cf5" data-name="Grupo 1" transform="translate(-1388 -277)">
                 <circle cx="4" cy="4" r="4" data-name="Elipse 1" transform="translate(1388 277)"/>
                 <circle cx="4" cy="4" r="4" data-name="Elipse 2" transform="translate(1388 301)"/>
@@ -191,11 +191,99 @@ export default {
           atc: "V03AE07",
           registers: 3,
           elements: [
-            {name: "Calcio acetato", register: "15 de mar. de 1997", isp: "F-10058/1",  provider: "BPH S.A.",                             expiration: "01 de dic. de 2019", formule: ["Cápsulas", "500mg"],     desc: "Terapia de la hiperfosfatemia, especialmente en pacientes que padecen de insuficiencia renal avanzada"},
+            {name: "Calcio acetato", register: "15 de mar. de 1997", isp: "F-10058/16",  provider: "BPH S.A.",                             expiration: "01 de dic. de 2019", formule: ["Cápsulas", "500mg"],     desc: "Terapia de la hiperfosfatemia, especialmente en pacientes que padecen de insuficiencia renal avanzada"},
             {name: "Calcio acetato", register: "09 de sep. de 1994", isp: "F-11631/16", provider: "Laboratorio Pasteur S.A.",             expiration: "08 de dic. de 2019", formule: ["Comprimidos", "667mg"],  desc: "Terapia de la hiperfosfatemia, especialmente en pacientes que padecen de insuficiencia renal avanzada"},
             {name: "Calcio acetato", register: "07 de oct. de 2015", isp: "F-22187/15", provider: "Laboratorio Hospipharma Chile Ltda.",  expiration: "16 de ene. de 2020", formule: ["Comprimidos", "667mg"],  desc: "Está indicado en el control de la hiperiosfatemia en pacientes con insuficiencia renal crónica sometidos a diálisis"},
           ]
         },
+        {
+          id: 5,
+          name: "Cloriazepóxido",
+          atc: "N05BA02",
+          registers: 1,
+          elements: [
+            {name: "Clordiazepóxido (Clorhidrato)", register: "26 de jul de 2001", isp: "F-7877/16",  provider: "BPH S.A.", expiration: "03 de dic. de 2019", formule: ["Cápsulas", "500mg"], desc: ""},
+          ]
+        },
+        {
+          id: 6,
+          name: "Dactinomicina",
+          atc: "L01DA01",
+          registers: 3,
+          elements: [
+            {name: "Dactinomicina", register: "15 de mar. de 1997", isp: "F-22807/16", provider: "Seven Pharma Chile SpA",  expiration: "01 de dic. de 2021", formule: ["Polvo liofilizado para solución inyectable", "0.5mg"],     desc: "Tratamiento de tumor de wilms localizado y metastasico; rabdomiosarcoma; y sarcoma de Ewing, cáncer de testículo y uterino; como parte de varios regimenes quimioterapeuticos en conjunto con cirugia y/o terapia radioactiva"},
+            {name: "Dactinomicina", register: "09 de sep. de 1994", isp: "F-24271/18", provider: "Seven Pharma Chile SpA",  expiration: "08 de dic. de 2021", formule: ["Polvo liofilizado para solución inyectable", "0.5mg"],  desc: "Tratamiento de tumor de wilms localizado y metastasico; rabdomiosarcoma; y sarcoma de Ewing, cáncer de testículo y uterino; como parte de varios regimenes quimioterapeuticos en conjunto con cirugia y/o terapia radioactiva."},
+            {name: "Dactinomicina", register: "07 de oct. de 2015", isp: "F-2770/14",  provider: "BPH S.A.",                expiration: "16 de ene. de 2022", formule: ["Polvo liofilizado para solución inyectable", "0.5mg"],  desc: "Está indicado en el control de la hiperiosfatemia en pacientes con insuficiencia renal crónica sometidos a diálisis"},
+          ]
+        },
+        {
+          id: 7,
+          name: "Estreptoquinasa",
+          atc: "B01AD01",
+          registers: 7,
+          elements: [
+            {name: "Estreptoquinasa", register: "15 de oct. de 1996", isp: "B-1334/16",  provider: "Laboratorio Bagó de Chile S.A.",  expiration: "08 de jun. de 2021", formule: ["Polvo liofilizado para solución inyectable", "500000U.I."], desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "19 de dic. de 1996", isp: "B-1339/16",  provider: "Laboratorio Bagó de Chile S.A.",  expiration: "01 de sep. de 2021", formule: ["Polvo liofilizado para solución inyectable", "750000U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "18 de jun. de 2004", isp: "B-1800/19",  provider: "BPH S.A.",                        expiration: "27 de dic. de 2022", formule: ["Polvo liofilizado para solución inyectable", "750U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "18 de jun. de 2004", isp: "B-1801/19",  provider: "BPH S.A.",                        expiration: "27 de oct. de 2022", formule: ["Polvo liofilizado para solución inyectable", "1500000U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "10 de sep. de 2006", isp: "B-1952/16",  provider: "Laboratorio Biosano S.A.",        expiration: "30 de dic. de 2023", formule: ["Polvo liofilizado para solución inyectable", "1500000U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "23 de abr. de 2015", isp: "B-2502/19",  provider: "BPH S.A.",                        expiration: "05 de ago. de 2030", formule: ["Polvo liofilizado para solución inyectable", "750U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+            {name: "Estreptoquinasa", register: "23 de abr. de 2015", isp: "B-2503/19",  provider: "BPH S.A.",                        expiration: "27 de ago. de 2030", formule: ["Polvo liofilizado para solución inyectable", "1500000U.I"],  desc: "Infarto agudo del miocardio, trombosis venosas profundas, embolía pulmonar, trombosis agudas y subagudas de las arterias periféricas y enfermedades obliterantes crónicas de las arterias; obliteraciones de los vasos centrales oftalmológicos."},
+          ]
+        },
+        {
+          id: 8,
+          name: "Goserelina",
+          atc: "L02AE03",
+          registers: 3,
+          elements : [
+            {name: "Goserelina", register: "10 de ene. de 1997", isp: "F-10156/16", provider: "Astrazeneca S.A.", expiration: "04 de sep. de 2019", formule: ["Implente", "10.8mg"], desc: "Tratamiento del cáncer de próstata posible de manipulación hormonal.Tratamiento de la endometriosis, incluyendo el alivio del dolor y la reducción de las lesiones endometriales. El uso está limitado a mujeres mayores de 18 años tratadas por 6 meses."},
+            {name: "Goserelina", register: "17 de jul. de 2019", isp: "F-24931/19", provider: "Eurofarama Chile S.A.", expiration: "21 de abr. de 2020", formule: ["Implante", "12.5mg"], desc: "Tratamiento del cáncer de próstata posible de manipulación hormonal.Tratamiento de la endometriosis, incluyendo el alivio del dolor y la reducción de las lesiones endometriales. El uso está limitado a mujeres mayores de 18 años tratadas por 6 meses."},
+            {name: "Goserelina", register: "17 de jul. de 2019", isp: "F-24935/19", provider: "Eurofarma Chile S.A.", expiration: "15 de ago. de 2020", formule: ["Implante", "4.1mg"], desc: "Tratamiento del cáncer de próstata posible de manipulación hormonal.Tratamiento de la endometriosis, incluyendo el alivio del dolor y la reducción de las lesiones endometriales. El uso está limitado a mujeres mayores de 18 años tratadas por 6 meses."}
+          ]
+        },
+        {
+          id: 9,
+          name: "Manitol",
+          atc: "B05BC01",
+          registers: 1,
+          elements : [
+            {name: "Manitol", register: "24 de abr. de 2004", isp: "F-13683/19", provider: "Laboratorio Sanderson S.A", expiration: "19 de mar. de 2023", formule: ["Solución Inyectable", "15g/100mL (% para V)"], desc: "Indicado para preservar la funcion renal en insuficiencia renal aguda, disminuir la presion intracraneal e intraocular, promover la excrecion de sustancias toxicas, coadyuvante en la reseccion transuretral prostatica y otros procedimienos quirurgicos"}
+          ]
+        },
+        {
+          id: 10,
+          name: "Pamidronato disódico",
+          atc: "M05BA03",
+          registers: 6,
+          elements : [
+            {name: "Pamidronato disódico", register: "21 de sep. de 2003", isp: "F-12928/18", provider: "Gador Ltda.", expiration: "10 de jul. de 2030", formule: ["Intravenosa", "90mg"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+            {name: "Pamidronato disódico", register: "10 de feb de 2004", isp: "F-13515/19", provider: "Gador Ltda.", expiration: "10 de jul. de 2031", formule: ["Intravenosa", "30mg/10mL"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+            {name: "Pamidronato disódico", register: "08 de ago. de 2008", isp: "F-16966/18", provider: "Kampar S.A.", expiration: "10 de jul. de 2031", formule: ["Intravenosa", "75.81mg"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+            {name: "Pamidronato disódico", register: "23 de jul de 2012", isp: "F-19556/17", provider: "Gador Ltda.", expiration: "10 de jul. de 2032", formule: ["Intravenosa", "90mg"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+            {name: "Pamidronato disódico", register: "17 de mar. de 2013", isp: "F-19820/18", provider: "Laboratorios Recalcine S.A.", expiration: "10 de jul. de 2033", formule: ["Intravenosa", "39.7mg"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+            {name: "Pamidronato disódico", register: "17 de mar. de 2013", isp: "F-19821/18", provider: "Laboratorios Recalcine S.a.", expiration: "10 de jul. de 2033", formule: ["Intravenosa", "119mg"], desc: "Enfermedad ósea de Paget. Hipercalcemia inducida por tumores. Metástasis óseas predominantemente líticas"},
+          ]
+        },
+        {
+          id: 11,
+          name: "Ritonavir",
+          atc: "J05AE03",
+          registers: 2,
+          elements : [
+            {name: "Ritonavir", register: "08 de sep. de 2011", isp: "F-18866/16", provider: "Abbvie Productos Farmacéuticos Ltda.", expiration: "10 de oct. de 2025", formule: ["Comprimidos recubiertos", "100mg"], desc: "Ritonavir está indicado en combinación con otros agentes antiretrovirales para el tratamiento de pacientes con infección por VIH cuando la terapia está justificada, basada en la evidencia clínica y/o inmunológica de progresión de la enfermedad en paciente"},
+            {name: "Ritonavir", register: "13 de ene. de 2017", isp: "F-23294/17", provider: "Seven Pharma Chile SpA", expiration: "14 de feb. de 2030", formule: ["Comprimidos recubiertos", "133.33mg"], desc: "Ritonavir está indicado en combinación con otros agentes antiretrovirales para el tratamiento de pacientes con infección por VIH cuando la terapia está justificada, basada en la evidencia clínica y/o inmunológica de progresión de la enfermedad en paciente"},
+          ]
+        },
+        {
+          id: 12,
+          name: "Tioguanina",
+          atc: "L01BB03",
+          registers: 1,
+          elements : [
+            {name: "Tioguanina", register: "25 de jun. de 1976", isp: "F-2450/19", provider: "Aspen Chile S.A.", expiration: "07 de dic. de 2019", formule: ["Comprimidos", "40mg"], desc: "Tratamiento de leucemias agudas, especialmente: leucemia mielógena aguda, leucemia linfoblástica aguda. También se usa en el tratamiento de leucemia granulocítica crónica."}
+          ]
+        }
       ]
     }
   },
